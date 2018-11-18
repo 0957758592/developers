@@ -217,25 +217,25 @@ router.delete(
               .map(item => item._id.toString())
               .indexOf(req.params.comment_id);
 
-            //Get own post index
-            const indexUserId = post.comments
-              .map(comment => comment.user.toString())
-              .findIndex((user, index) => {
-                if (
-                  (user === req.user.id && index === removeIndex) ||
-                  (post.user.toString() === req.user.id &&
-                    index === removeIndex)
-                ) {
-                  console.log("user: => ", user);
-                  return index;
-                }
-              });
+            // //Get own post index
+            // const indexUserId = post.comments
+            //   .map(comment => comment.user.toString())
+            //   .findIndex((user, index) => {
+            //     if (
+            //       (user === req.user.id && index === removeIndex) ||
+            //       (post.user.toString() === req.user.id &&
+            //         index === removeIndex)
+            //     ) {
+            //       console.log("user: => ", user);
+            //       return index;
+            //     }
+            //   });
 
-            if (indexUserId !== removeIndex) {
-              return res
-                .status(401)
-                .json({ notowncommets: "It's not your own comments" });
-            }
+            // if (indexUserId !== removeIndex) {
+            //   return res
+            //     .status(401)
+            //     .json({ notowncommets: "It's not your own comments" });
+            // }
 
             // Splice comment from array
             post.comments.splice(removeIndex, 1);
