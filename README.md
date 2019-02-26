@@ -2,7 +2,7 @@
 
 MERN Stack (MongoDB, ExpressJS, ReactJS, NodeJS);
 
-[Demo App](https://immense-stream-36647.herokuapp.com/)
+[Demo App](https://sleepy-shelf-19954.herokuapp.com/)
 
 
 ## Installation
